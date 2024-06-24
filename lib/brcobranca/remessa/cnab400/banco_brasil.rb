@@ -74,6 +74,11 @@ module Brcobranca
           'BANCODOBRASIL'.ljust(15, ' ')
         end
 
+        def integracao
+          '123456789'.ljust(9, ' ')
+        end
+
+
         # Informacoes da conta corrente do cedente
         #
         # @return [String]
