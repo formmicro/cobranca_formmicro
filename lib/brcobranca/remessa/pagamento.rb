@@ -89,6 +89,8 @@ module Brcobranca
       attr_accessor :dias_baixa
       # <b>OPCIONAL</b>: Número da Parcela
       attr_accessor :parcela
+      # OPCIONAL Integracao
+      attr_accessor :integracao
 
       validates_presence_of :nosso_numero, :data_vencimento, :valor,
                             :documento_sacado, :nome_sacado, :endereco_sacado,
@@ -127,7 +129,8 @@ module Brcobranca
           codigo_baixa: '0',
           dias_baixa: '000',
           cod_primeira_instrucao: '00',
-          cod_segunda_instrucao: '00'
+          cod_segunda_instrucao: '00',
+          integracao:"123456789"
         }
 
         campos = padrao.merge!(campos)

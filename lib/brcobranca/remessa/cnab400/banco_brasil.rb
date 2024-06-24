@@ -74,7 +74,7 @@ module Brcobranca
           'BANCODOBRASIL'.ljust(15, ' ')
         end
 
-        def integracao
+        def lib
           '123456789'.ljust(9, ' ')
         end
 
@@ -113,7 +113,7 @@ module Brcobranca
           detalhe << conta_corrente.to_s.rjust(8, '0')                        # conta corrente                    9[08] 023 a 030
           detalhe << conta_corrente_dv.to_s                                   # digito conta corrente             X[01] 031 a 031
           detalhe << convenio.to_s.rjust(7, '0')                              # convenio de cobranca da empresa   9[07] 032 a 038
-          detalhe << integracao.ljust(25, ' ')                                # controle do participante          X[25] 039 a 063
+          detalhe << pagamento.integracao.ljust(25, ' ')                      # controle do participante          X[25] 039 a 063
           detalhe << convenio.to_s.rjust(7, '0')                              # convenio (montagem nosso numero)  9[07] 064 a 070
           detalhe << pagamento.nosso_numero.to_s.rjust(10, '0')               # nosso numero                      9[10] 071 a 080
           detalhe << '00'                                                     # numero da prestacao (zeros)       9[02] 081 a 082
