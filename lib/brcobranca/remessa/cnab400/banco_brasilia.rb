@@ -132,7 +132,7 @@ module Brcobranca
           detalhe << pagamento.uf_sacado                                    # uf do pagador                         X[02]
           detalhe << pagamento.cep_sacado                                   # cep do pagador                        9[08]
           detalhe << pagamento.identificacao_sacado(false).to_s             # tipo de pessoa                        9[01]
-          detalhe << pagamento.documento_ou_numero.to_s.rjust(13, '0') # seu numero                            9[13]
+          detalhe << pagamento.integracao.ljust(13, ' ')                    # seu numero                            9[13]
           detalhe << codigo_carteira                                        # categoria de cobranca                 9[01]
           detalhe << pagamento.data_emissao.strftime('%d%m%Y')              # data de emissao                       9[08]
           detalhe << '21'                                                   # tipo do documento                     9[02]

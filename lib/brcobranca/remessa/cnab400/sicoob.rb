@@ -136,7 +136,7 @@ module Brcobranca
           detalhe << digito_conta                                           # Digito da conta corrente              9[1]
           detalhe << '000000'                                               # Convênio de Cobrança do Beneficiário: "000000"      9[6]
           detalhe << ''.rjust(25, ' ')                                      # Número de Controle do Participante: Brancos      X[25]
-          detalhe << pagamento.nosso_numero.to_s.rjust(12, '0')             # nosso numero com DV                   9[12]
+          detalhe << pagamento.integracao.ljust(12, ' ')                    # nosso numero com DV                   9[12]
           detalhe << pagamento.parcela.to_s.rjust(2, '0')                   # Número da Parcela: "01" se parcela única   9[02]
           detalhe << '00'                                                   # Grupo de Valor: "00"                  9[02]
           detalhe << '   '                                                  # Complemento do Registro: Brancos      X[03]

@@ -75,7 +75,7 @@ module Brcobranca
           detalhe += ''.rjust(16, ' ')                                # brancos                                     9[16]       002 a 017
           detalhe << codigo_cedente.rjust(13, ' ')                    # código do cedente                           X[13]       018 a 030
           detalhe << ''.rjust(7, ' ')                                 # brancos                                     X[07]       031 a 037
-          detalhe << pagamento.documento_ou_numero.to_s.ljust(25, ' ') # num. controle                               X[25]       038 a 062
+          detalhe << pagamento.integracao.ljust(25, ' ')              # num. controle                               X[25]       038 a 062
           detalhe << pagamento.nosso_numero.to_s.rjust(8, '0')        # identificação do título (nosso número)      9[08]       063 a 070
           detalhe << digito_nosso_numero(pagamento.nosso_numero)      # dígitos de conferência do nosso número (dv) 9[02]       071 a 072
           detalhe << ''.rjust(32, ' ')                                # mensagem no bloqueto                        X[32]       073 a 104

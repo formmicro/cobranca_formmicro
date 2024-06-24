@@ -202,7 +202,7 @@ module Brcobranca
           # Identificacao da Ocorrencia 9[2] 109 a 110
           detalhe << pagamento.identificacao_ocorrencia
           # numero do documento  X[10] 111 a 120
-          detalhe << pagamento.numero.to_s.rjust(10, '0')
+          detalhe << pagamento.integracao.rjust(10, '0')
           # data do vencimento 9[06] 121 a 126
           detalhe << pagamento.data_vencimento.strftime('%d%m%y')
           # valor do documento 9[13] 127 a 139
